@@ -24,3 +24,31 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
   });
 
   
+
+
+firebase.initializeApp(config);
+
+/*
+GOOGLE MAPS CODE
+*/
+
+var map;
+var service;
+
+function initMap() {
+//Set Austin latitude and longitude
+var austin = new google.maps.LatLng(30.27,-97.74);
+
+//Initialize map
+map = new google.maps.Map(document.getElementById('map'), {
+center: austin,
+zoom: 10
+});
+
+//Initialize Places functionality
+service = new google.maps.places.PlacesService(map);
+}
+
+/*
+END GOOGLE MAPS CODE
+*/
