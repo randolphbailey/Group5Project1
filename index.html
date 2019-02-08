@@ -13,10 +13,10 @@
 </head>
 <body>
 
-<h1>Oh The Places You'll Go!</h1>
 
-<div id = "submission" class = "container">
+<div id = "startpage" class = "container">
 
+        <form>
     <form>
             
         <p>let's start simple: where are you?</p>
@@ -30,8 +30,34 @@
             
     </form>
 
-    <br>
+                <div class="form-group">
+  
+                  <label for="username-input">Username</label>
+  
+                  <input class="form-control" id="username-input" placeholder="" type="text">
+  
+                </div>
 
+                <div class="form-group">
+  
+                        <label for="password-input">Password</label>
+        
+                        <input class="form-control" id="password-input" placeholder="" type="text">
+        
+                      </div>
+
+
+        </form>
+
+</div>
+
+<form>
+
+    <input type=button 
+    value="Submit"
+    onClick="self.location='main.html'">
+
+</form> 
     <div id = "container1" class = "container">
         <!--This div will contain the map  Don't change!-->
         <div id="map"></div>
@@ -39,7 +65,9 @@
     <br>
     <br>
     <br>
+
     <div id = "container2" class = "container">
+
     
         content goes here
     
@@ -50,12 +78,16 @@
  </div>
 
 
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUiKebXiIyUY15hkYOJC770BTXJpJBtUw&callback=initMap&libraries=places" async defer></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="assets/tweetie/dist/tweetie.min.js"></script>
+
+<script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUiKebXiIyUY15hkYOJC770BTXJpJBtUw&callback=initMap&libraries=places" async defer></script>
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+
 </body>
 </html>
