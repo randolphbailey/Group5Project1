@@ -1,33 +1,49 @@
+// begin twitter code
+var searchCity = "austin";
+var searchBusiness = "el arroyo"
 
-// // Initialize Firebase
-// var config = {
-//     apiKey: "AIzaSyCswD9r_NwpQdqKraJ6hIsgSsJ3V8YuFJo",
-//     authDomain: "group5project1-540d2.firebaseapp.com",
-//     databaseURL: "https://group5project1-540d2.firebaseio.com",
-//     projectId: "group5project1-540d2",
-//     storageBucket: "",
-//     messagingSenderId: "261770648936"
-//   };
+console.log($('#container2').tweetie({
+    "url": "https://cors-anywhere.herokuapp.com/" + "https://files.sonnyt.com/tweetie/v3/",
+    "type": "search",
+    "template": "{{tweet.text}}<br>",
+    "dateFormat": "%b %d, %Y",
+    "params": {
+      "count": 15,
+      "q": "el arroyo austin"
+    }
+  }));
 
-// firebase.initializeApp(config);
+//   end twitterr code
 
-// // Initialize the FirebaseUI Widget using Firebase.
-// var ui = new firebaseui.auth.AuthUI(firebase.auth());
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyCswD9r_NwpQdqKraJ6hIsgSsJ3V8YuFJo",
+    authDomain: "group5project1-540d2.firebaseapp.com",
+    databaseURL: "https://group5project1-540d2.firebaseio.com",
+    projectId: "group5project1-540d2",
+    storageBucket: "",
+    messagingSenderId: "261770648936"
+  };
 
-//   // Firebase UI setup
-//   ui.start('#firebaseui-auth-container', {
-//     signInOptions: [
-//       firebase.auth.EmailAuthProvider.PROVIDER_ID,
-//       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-//       firebase.auth.TwitterAuthProvider.PROVIDER_ID
-//     ],
-//     // Other config options...
-//   });
+firebase.initializeApp(config);
+
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+  // Firebase UI setup
+  ui.start('#firebaseui-auth-container', {
+    signInOptions: [
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.TwitterAuthProvider.PROVIDER_ID
+    ],
+    // Other config options...
+  });
 
   
 
 
-// firebase.initializeApp(config);
+firebase.initializeApp(config);
 
 /*
 GOOGLE MAPS CODE
@@ -54,20 +70,21 @@ service = new google.maps.places.PlacesService(map);
 END GOOGLE MAPS CODE
 */
 // begin twitter code
-var searchTerms = [];
+var searchCity = "austin";
+var searchBusiness = "el arroyo"
 
-$('#container2').tweetie({
+console.log($('#container2').tweetie({
     "url": "https://cors-anywhere.herokuapp.com/" + "https://files.sonnyt.com/tweetie/v3/",
     "type": "search",
-    "template": "{{tweet.text}}<br>",
+    "template":  "<li>{{tweet.created_at}} - {{tweet.text}}</li>",
     "dateFormat": "%b %d, %Y",
     "params": {
       "count": 15,
     //   "q": "the clay pit",
     //   "q": "austin"
-      "q": "el arroyo austin kitten"
+      "q": "el arroyo austin"
     }
-  });
+  }));
 
 
 
