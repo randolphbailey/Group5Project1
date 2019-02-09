@@ -1,7 +1,7 @@
 body 
 
 {
-
+    background-color: #1c1f28;
 }
 
 h1 
@@ -9,14 +9,22 @@ h1
 {
 
     text-align: center;
+    font-size: 30pt;
+    color: #d76035;
 }
 
-#submission
+p 
 
 {
 
-    text-align: center;
+    color: #e5c187;
 
+}
+
+#submission, #login
+
+{
+    text-align: center;
 }
 
 #container1, #container2
