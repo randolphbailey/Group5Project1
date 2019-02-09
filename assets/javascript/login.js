@@ -7,11 +7,14 @@ var config = {
     storageBucket: "group5project1-540d2.appspot.com",
     messagingSenderId: "261770648936"
   };
+  console.log("hello");
 
   firebase.initializeApp(config);
+  console.log("hello");
 
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
+console.log("hello");
 
   // Firebase UI setup
   ui.start('#firebaseui-auth-container', {
@@ -22,6 +25,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
     ],
     // Other config options...
   });
+  console.log("hello");
 
   var uiConfig = {
     callbacks: {
@@ -34,7 +38,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
     },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'redirect',
-    signInSuccessUrl: "https://www.google.com",
+    signInSuccessUrl: "https://jiminhuh.github.io/Tweetmaptestrepo/main",
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -42,6 +46,22 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
     ]
   };
+  console.log("hello");
 
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
+console.log("hello");
+
+
+
+var user = firebase.auth().currentUser;
+console.log(user);
+
+if (user) {
+  window.location.href = "https://jiminhuh.github.io/Tweetmaptestrepo/main";
+} else {
+  // No user is signed in.
+}
+
+// firebase.auth().onAuthStateChanged(function(user) {
+//   });
