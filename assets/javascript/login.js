@@ -4,11 +4,11 @@ var config = {
     authDomain: "group5project1-540d2.firebaseapp.com",
     databaseURL: "https://group5project1-540d2.firebaseio.com",
     projectId: "group5project1-540d2",
-    storageBucket: "",
+    storageBucket: "group5project1-540d2.appspot.com",
     messagingSenderId: "261770648936"
   };
 
-firebase.initializeApp(config);
+  firebase.initializeApp(config);
 
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -29,7 +29,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
         // User successfully signed in.
         // Return type determines whether we continue the redirect automatically
         // or whether we leave that to developer to handle.
-        return false;
+        return true;
       }
     },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
@@ -42,9 +42,6 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
     ]
   };
-  
-
-firebase.initializeApp(config);
 
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
