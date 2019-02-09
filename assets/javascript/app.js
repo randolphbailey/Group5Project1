@@ -41,22 +41,3 @@ service = new google.maps.places.PlacesService(map);
 /*
 END GOOGLE MAPS CODE
 */
-// begin twitter code
-var searchCity = "austin";
-var searchBusiness = "el arroyo"
-
-console.log($('#container2').tweetie({
-    "url": "https://cors-anywhere.herokuapp.com/" + "https://files.sonnyt.com/tweetie/v3/",
-    "type": "search",
-    "template":  "<li>{{tweet.created_at}} - {{tweet.text}}</li>",
-    "dateFormat": "%b %d, %Y",
-    "params": {
-      "count": 15,
-    //   "q": "the clay pit",
-    //   "q": "austin"
-      "q": "el arroyo austin"
-    }
-  }));
-
-
-
