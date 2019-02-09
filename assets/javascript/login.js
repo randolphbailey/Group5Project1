@@ -49,6 +49,7 @@ ui.start('#firebaseui-auth-container', uiConfig);
 
 
 var user = firebase.auth().currentUser;
+console.log(user);
 
 if (user) {
   window.location.href = "https://jiminhuh.github.io/Tweetmaptestrepo/main";
