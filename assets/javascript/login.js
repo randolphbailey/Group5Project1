@@ -24,14 +24,14 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
   });
 
   var uiConfig = {
-    // callbacks: {
-    //   signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-    //     // User successfully signed in.
-    //     // Return type determines whether we continue the redirect automatically
-    //     // or whether we leave that to developer to handle.
-    //     return true;
-    //   }
-    // },
+    callbacks: {
+      signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+        // User successfully signed in.
+        // Return type determines whether we continue the redirect automatically
+        // or whether we leave that to developer to handle.
+        return true;
+      }
+    },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'redirect',
     signInSuccessUrl: "https://jiminhuh.github.io/Tweetmaptestrepo/main",
@@ -45,3 +45,11 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      window.location.href = "https://jiminhuh.github.io/Tweetmaptestrepo/main";
+    } else {
+      // No user is signed in.
+    }
+  });
