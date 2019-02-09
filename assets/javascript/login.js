@@ -7,11 +7,14 @@ var config = {
     storageBucket: "group5project1-540d2.appspot.com",
     messagingSenderId: "261770648936"
   };
+  console.log("hello");
 
   firebase.initializeApp(config);
+  console.log("hello");
 
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
+console.log("hello");
 
   // Firebase UI setup
   ui.start('#firebaseui-auth-container', {
@@ -22,6 +25,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
     ],
     // Other config options...
   });
+  console.log("hello");
 
   var uiConfig = {
     callbacks: {
@@ -42,9 +46,11 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
     ]
   };
+  console.log("hello");
 
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
+console.log("hello");
 
 
 
