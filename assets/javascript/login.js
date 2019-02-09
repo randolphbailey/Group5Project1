@@ -26,6 +26,11 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
   var uiConfig = {
     callbacks: {
       signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+
+        console.log("WHEN AM I HAPPENING")
+          console.log(authResult);
+
+          console.log(redirectUrl);
         // User successfully signed in.
         // Return type determines whether we continue the redirect automatically
         // or whether we leave that to developer to handle.
