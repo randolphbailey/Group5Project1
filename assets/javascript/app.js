@@ -1,4 +1,5 @@
 // begin twitter code
+
 var searchCity = "austin";
 var searchBusiness = "el arroyo"
 
@@ -14,6 +15,7 @@ console.log($('#container2').tweetie({
   }));
 
 //   end twitterr code
+
 
 // Initialize Firebase
 var config = {
