@@ -30,7 +30,7 @@ var config = {
     // ...
   });
 
-  firebase.auth().signInWithRedirect(provider);
+  //firebase.auth().signInWithRedirect(provider);
 
 
   firebase.auth().getRedirectResult().then(function(result) {
