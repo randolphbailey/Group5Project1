@@ -39,7 +39,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
     },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'redirect',
-    signInSuccessUrl: "https://jiminhuh.github.io/Tweetmaptestrepo/main.html",
+    signInSuccessUrl: "https://jiminhuh.github.io/Tweetmaptestrepo/main",
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
