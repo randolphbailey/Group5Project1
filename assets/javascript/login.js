@@ -46,10 +46,15 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
 
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      window.location.href = "https://jiminhuh.github.io/Tweetmaptestrepo/main";
-    } else {
-      // No user is signed in.
-    }
-  });
+
+
+var user = firebase.auth().currentUser;
+
+if (user) {
+  window.location.href = "https://jiminhuh.github.io/Tweetmaptestrepo/main";
+} else {
+  // No user is signed in.
+}
+
+// firebase.auth().onAuthStateChanged(function(user) {
+//   });
