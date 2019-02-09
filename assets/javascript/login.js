@@ -12,7 +12,6 @@ var config = {
 
 
   var provider = new firebase.auth.GoogleAuthProvider();
-  console.log(firebase.auth().currentUser);
 
   $("#google").on("click", function () {
     firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -20,7 +19,7 @@ var config = {
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
-        $("#google").text("Signed in!"); 
+        $("#google").val("Signed in!"); 
       }).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
