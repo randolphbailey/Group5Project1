@@ -1,7 +1,7 @@
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyCswD9r_NwpQdqKraJ6hIsgSsJ3V8YuFJo",
-    authDomain: "https://jiminhuh.github.io/Tweetmaptestrepo",
+    authDomain: "group5project1-540d2.firebaseapp.com",
     databaseURL: "https://group5project1-540d2.firebaseio.com",
     projectId: "group5project1-540d2",
     storageBucket: "group5project1-540d2.appspot.com",
@@ -24,14 +24,14 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
   });
 
   var uiConfig = {
-    callbacks: {
-      signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-        // User successfully signed in.
-        // Return type determines whether we continue the redirect automatically
-        // or whether we leave that to developer to handle.
-        return true;
-      }
-    },
+    // callbacks: {
+    //   signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+    //     // User successfully signed in.
+    //     // Return type determines whether we continue the redirect automatically
+    //     // or whether we leave that to developer to handle.
+    //     return true;
+    //   }
+    // },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'redirect',
     signInSuccessUrl: "https://jiminhuh.github.io/Tweetmaptestrepo/main",
