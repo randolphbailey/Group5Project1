@@ -1,5 +1,5 @@
 /*
-GOOGLE MAPS CODE
+START GOOGLE MAPS CODE
 */
 var searchBox, query;
 
@@ -8,6 +8,8 @@ $("#submit").on("click", function() {
   $("#fd").val("");
 });
 
+
+//define some global variables requried by Google API
 var map;
 var service;
 var infowindow;
@@ -27,6 +29,8 @@ var infowindow;
 //   });
 // }
 
+//Main function that Google API will look for and run on page load
+//Most code related to the map should go inside this function
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 30.266350, lng: -97.744267},
@@ -37,8 +41,6 @@ function initMap() {
   // Create the search box and link it to the UI element.
   var input = document.getElementById('fd');
   var searchBox = new google.maps.places.SearchBox(input);
-
-  //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {

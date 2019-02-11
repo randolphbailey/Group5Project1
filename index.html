@@ -1,31 +1,78 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TweetMap</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <title>OTPYG</title>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
 </head>
 <body>
 
-<h1>Welcome to TweetMap!</h1>
-<div id = "firebaseui-auth-container" class = "container"></div>
+<h1>Oh The Places You'll Go!</h1>
+
+<br><br>
+
+<div id="login" class="container">
+
+    <p>Let's Login! (Optional)</p>
+
+    <br><br>
+
+    <div class= "wrapper">
+        <button type="submit" class="btn btn-primary m-2" id="google-button">Google</button><button type="submit" class="btn btn-primary m-2" id="github-button">Github</button>
+    </div>
 
 
 
+</div>
+
+<br><br><br>
+
+<div id="submission" class="container">
+
+    <p>Let's Get Lookin'!</p>
+
+    <br><br>
+
+            
+            <p>Let's start simple: Where are you?</p>
+
+            <br><br>
+            
+            <input type="text" name="address" id="fd">
+            
+            <br><br>
+            
+            <input type="button" id="submit" value="submit" class="btn btn-success"> 
+            
+    <div id="main-content" class="row">
+        <div id="container1" class="col-lg-9 col-md-12">
+            <!--map goes here-->
+            <div id="map"></div>
+        </div>
+        <div id="container2" class="col-lg-3 col-md-12">
+        
+            content goes here
+        
+        </div>
+    </div> 
+ </div>
 
 
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
-    <script type="text/javascript" src="assets/javascript/login.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+ <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/tweetie/dist/tweetie.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUiKebXiIyUY15hkYOJC770BTXJpJBtUw&callback=initMap&libraries=places" async defer></script>
+<script src="assets/javascript/login.js"></script>
+<script type="text/javascript" src="assets/javascript/app.js"></script>
 
 </body>
 </html>
