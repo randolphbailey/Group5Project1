@@ -1,39 +1,11 @@
-body 
-
-{
-    background-color: #1c1f28;
-}
-
-h1 
-
-{
-
+h1 {
     text-align: center;
     font-size: 30pt;
     color: #d76035;
 }
 
-p 
-
-{
-
-    color: #e5c187;
-
-}
-
-#submission, #login
-
-{
+#submission, #login {
     text-align: center;
-}
-
-#container1, #container2
-
-{
-
-    background-color: grey;
-    
-
 }
 
 /* Always set the map height explicitly to define the size of the div
@@ -43,5 +15,5 @@ p
 }
 
 #fd {
-    width: 500px;
+    width: 50%;
 }
