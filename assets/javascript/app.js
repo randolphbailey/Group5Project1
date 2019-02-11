@@ -66,8 +66,7 @@ function initMap() {
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
-      console.log(place.name);
-      console.log(place.geometry);
+      renderTweets(place.name, place.address_components[3].long_name);
 
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
@@ -109,7 +108,7 @@ END GOOGLE MAPS CODE
 // this will be called when the user searched a place (either pressing enter or clicking submit)
 // i want to only pass into it the name of the city and the name of the business/type of business
 // any more specific than that and we tend to not have many tweets that match
-function renderTweets(){
+function renderTweets(pl, ci){
   $('#container2').tweetie({
     "url": "https://cors-anywhere.herokuapp.com/" + "https://files.sonnyt.com/tweetie/v3/",
     "type": "search",
@@ -117,7 +116,7 @@ function renderTweets(){
     "dateFormat": "%b %d, %Y",
     "params": {
       "count": 15,
-      "q": "el arroyo austin"
+      "q": pl+" "+ci
     }
   });
 };
