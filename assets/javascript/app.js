@@ -66,7 +66,15 @@ function initMap() {
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
-      renderTweets(place.name, place.address_components[3].long_name);
+      // calling the renderTweets function on our places
+      // checks if the city name is given
+      if (place.address_components){
+        renderTweets(place.name, place.address_components[3].long_name);
+
+      // if not we will just call our function with the name and type of establishment
+      } else {
+        renderTweets(place.name, place.types[0]);
+      }
 
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
