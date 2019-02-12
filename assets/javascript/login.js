@@ -12,7 +12,7 @@ var config = {
 
   // Declaring some globals
   var database = firebase.database();
-  var searchArray = [];
+
 
 
   // Initialize Providers
@@ -45,20 +45,6 @@ var config = {
       });
 
   })
-
-  $("#search").on("click", (event) => {
-    event.preventDefault();
-    var value = $("#fd").val().trim();
-    searchArray.push(value);
-    console.log(searchArray);
-  })
-
-  $("#favorite").on("click", () => {
-    var latestSearch = searchArray[(searchArray.length - 1)];
-    console.log(latestSearch);
-  })
-
-  
 
 
 
