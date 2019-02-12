@@ -12,7 +12,7 @@ var config = {
 
   // Declaring some globals
   var database = firebase.database();
-
+  var searchArray = [];
 
 
   // Initialize Providers
@@ -45,6 +45,23 @@ var config = {
       });
 
   })
+
+  $("#submit").on("click", (event) => {
+    event.preventDefault();
+    var value = $("#fd").val().trim();
+    searchArray.push(value);
+    console.log(searchArray);
+  })
+
+  
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log("signed in");
+    } else {
+      // No user is signed in.
+    }
+  });
+  
 
 
 

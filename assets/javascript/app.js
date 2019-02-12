@@ -2,22 +2,11 @@
 START GOOGLE MAPS CODE
 */
 var searchBox, query;
-var searchArray = [];
 
-// Submit Button
 $("#submit").on("click", function() {
   searchBox = $("#fd").val();
-  searchArray.push(searchBox);
-  console.log(searchArray);
   $("#fd").val("");
 });
-
-// Favorite button 
-$("#favorite").on("click", () => {
-  var latestSearch = searchArray[(searchArray.length - 1)];
-  console.log(latestSearch);
-})
-
 
 
 //define some global variables requried by Google API
