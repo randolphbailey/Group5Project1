@@ -13,6 +13,7 @@ var config = {
   // Declaring some globals
   var database = firebase.database();
   var searchArray = [];
+  var favoritesArray = [];
 
 
   // Initialize Providers
@@ -31,6 +32,7 @@ var config = {
         database.ref(user.uid).set({
             name: user.displayName,
             email: user.email,
+            favorites: favoritesArray
         })
 
       }).catch(function(error) {
@@ -53,20 +55,21 @@ var config = {
     console.log(searchArray);
   })
 
+  $("#favorite").on("click", (event) => {
+    event.preventDefault();
+    var latestSearch = searchArray[(searchArray.length - 1)];
+    favoritesArray.push(latestSearch);
+    console.log(user.uid);
+    //logging it onto the database
+    database.ref(user.uid).push({
+        favorites: favoritesArray
+    })
+})
+
   
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-    $("#favorite").on("click", (event) => {
-        event.preventDefault();
-        var latestSearch = searchArray[(searchArray.length - 1)];
-        var favoritesArray = [];
-        favoritesArray.push(latestSearch);
-        console.log(user.uid);
-        //logging it onto the database
-        database.ref(user.uid).push({
-            favorites: favoritesArray
-        })
-    })
+   
     } else {
       // No user is signed in.
     }
