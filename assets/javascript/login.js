@@ -56,7 +56,17 @@ var config = {
   
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      console.log("signed in");
+    $("#favorite").on("click", (event) => {
+        event.preventDefault();
+        var latestSearch = searchArray[(searchArray.length - 1)];
+        var favoritesArray = [];
+        favoritesArray.push(latestSearch);
+        console.log(user.uid);
+        //logging it onto the database
+        database.ref(user.uid).push({
+            favorites: favoritesArray
+        })
+    })
     } else {
       // No user is signed in.
     }
