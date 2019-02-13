@@ -74,12 +74,8 @@ var config = {
 })
 
 $(":button").on("click", () => {
-    if (($(this).val() === undefined) || ($(this).val() === "Search" || ($(this).val()) === "Favorites")) {
-        return;
-    } else {
-        var value = $(this).val();
-        console.log(value);
-    }
+    var value = $(this).val();
+    console.log(value);
 })
 
 
