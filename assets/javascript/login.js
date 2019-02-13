@@ -31,7 +31,7 @@ var config = {
         database.ref(user.uid).set({
             name: user.displayName,
             email: user.email,
-            favorites: favoritesArray
+            favorites: "Add a Favorite Location!"
         })
 
       }).catch(function(error) {
