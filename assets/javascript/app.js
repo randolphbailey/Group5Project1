@@ -116,18 +116,12 @@ END GOOGLE MAPS CODE
 // this will be called when the user searched a place (either pressing enter or clicking submit)
 // i want to only pass into it the name of the city and the name of the business/type of business
 // any more specific than that and we tend to not have many tweets that match
-
 var testTemplate = "<div class='col-4 mb-3'><div class='card'><div class='card-body'><h5 class='card-title'>{{tweet.user.screen_name}}</h5><p class='card-text'>{{tweet.text}}</p></div><div class='card-footer'><a href='https://twitter.com/Twitter/status/{{tweet.id_str}}' target='_blank'>Permalink</a></div></div></div>";
-
 function renderTweets(pl, ci){
   $('#container2').tweetie({
     "url": "https://cors-anywhere.herokuapp.com/" + "https://files.sonnyt.com/tweetie/v3/",
     "type": "search",
-<<<<<<< HEAD
-    "template": "{{tweet.text}}",
-=======
     "template": testTemplate,
->>>>>>> 15348737cd1e29ff19fe9083a47058f7f0a0149c
     "dateFormat": "%b %d, %Y",
     "params": {
       "count": 15,
@@ -135,7 +129,4 @@ function renderTweets(pl, ci){
     }
   });
 };
-// actualURL: https://twitter.com/MSUMDining/status/1095348050082422785
-
-// https://twitter.com/i/web/status/1095348050082422785
 //   end twitterr code
