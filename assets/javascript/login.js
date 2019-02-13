@@ -27,8 +27,8 @@ var config = {
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
-        $("#google-button").html("");
-        $("#letslogin").text("Welcome" + user.displayName);
+        $("#google-button").remove();
+        $("#letslogin").text("Welcome " + user.displayName + "!");
         console.log(user);
         // database logging
         database.ref(user.uid).set({
