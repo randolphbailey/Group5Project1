@@ -117,10 +117,11 @@ END GOOGLE MAPS CODE
 // this will be called when the user searched a place (either pressing enter or clicking submit)
 // i want to only pass into it the name of the city and the name of the business/type of business
 // any more specific than that and we tend to not have many tweets that match
-var testTemplate = "<div class='col-4 mb-3'><div class='card'><div class='card-body'><h5 class='card-title'>{{tweet.user.screen_name}}</h5><p class='card-text'>{{tweet.text}}</p></div><div class='card-footer'><a href='https://twitter.com/Twitter/status/{{tweet.id_str}}' target='_blank'>Permalink</a></div></div></div>";
+var testTemplate = '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">{{tweet.text}}</p>&mdash; {{tweet.user.name}} ({{tweet.user.screen_name}}) <a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}?ref_src=twsrc%5Etfw">{{tweet.created_at}}</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
 
 function renderTweets(pl, ci){
-  $('#container2').tweetie({
+  console.log('called');
+  $('#tweets').tweetie({
     "url": "https://cors-anywhere.herokuapp.com/" + "https://files.sonnyt.com/tweetie/v3/",
     "type": "search",
     "template": testTemplate,
@@ -129,6 +130,8 @@ function renderTweets(pl, ci){
       "count": 15,
       "q": pl+" "+ci
     }
+  }, function() {
+    console.log("Finished");
   });
 };
 //   end twitterr code
