@@ -77,8 +77,8 @@ $(":button").on("click", () => {
     if (($(this).val() === "Search" || ($(this).val()) === "Favorites")) {
         return;
     } else {
-        var id = $(this).attr("id");
-        console.log(id);
+        var value = $(this).val();
+        console.log(value);
     }
 })
 
