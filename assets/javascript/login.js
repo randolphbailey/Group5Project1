@@ -26,6 +26,8 @@ var config = {
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
+        $("#google-button").html("");
+        $("#letslogin").text("Welcome" + user.displayName);
         console.log(user);
         // database logging
         database.ref(user.uid).set({
@@ -51,7 +53,6 @@ var config = {
     event.preventDefault();
     var value = $("#fd").val().trim();
     searchArray.push(value);
-    console.log(searchArray);
   })
 
   $("#favorite").on("click", (event) => {
