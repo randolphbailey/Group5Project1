@@ -66,7 +66,7 @@ var config = {
     database.ref(`${user.uid}/favorites`).on("child_added", (child) => {
         console.log(child.val());
         var buttonsHTML = "<button class='btn' id=" + child.val() + ">" + child.val() + "</button>"
-        $("#button-div").append(buttonsHTML);
+        $(".button-div").append(buttonsHTML);
     })
 
 })
