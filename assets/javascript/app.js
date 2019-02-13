@@ -53,6 +53,16 @@ function initMap() {
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
 
+    // calling the renderTweets function on our places
+    // checks if the city name is given
+    if (places[0].address_components){
+      renderTweets(places[0].name, places[0].address_components[3].long_name);
+
+    // if not we will just call our function with the name and type of establishment
+    } else {
+      renderTweets(places[0].name, places[0].types[0]);
+    }
+
     if (places.length == 0) {
       return;
     }
@@ -66,15 +76,6 @@ function initMap() {
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
-      // calling the renderTweets function on our places
-      // checks if the city name is given
-      if (place.address_components){
-        renderTweets(place.name, place.address_components[3].long_name);
-
-      // if not we will just call our function with the name and type of establishment
-      } else {
-        renderTweets(place.name, place.types[0]);
-      }
 
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
@@ -116,7 +117,6 @@ END GOOGLE MAPS CODE
 // this will be called when the user searched a place (either pressing enter or clicking submit)
 // i want to only pass into it the name of the city and the name of the business/type of business
 // any more specific than that and we tend to not have many tweets that match
-
 var testTemplate = "<div class='col-4 mb-3'><div class='card'><div class='card-body'><h5 class='card-title'>{{tweet.user.screen_name}}</h5><p class='card-text'>{{tweet.text}}</p></div><div class='card-footer'><a href='https://twitter.com/Twitter/status/{{tweet.id_str}}' target='_blank'>Permalink</a></div></div></div>";
 
 function renderTweets(pl, ci){
@@ -131,5 +131,4 @@ function renderTweets(pl, ci){
     }
   });
 };
-
 //   end twitterr code
