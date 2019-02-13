@@ -12,7 +12,6 @@ var config = {
 
   // Declaring some globals
   var database = firebase.database();
-  var user = firebase.auth().currentUser;
   var searchArray = [];
   var favoritesArray = [];
 
@@ -59,22 +58,22 @@ var config = {
     event.preventDefault();
     var latestSearch = searchArray[(searchArray.length - 1)];
     favoritesArray.push(latestSearch);
+    var user = firebase.auth().currentUser;
     console.log(user.uid);
     //logging it onto the database
     database.ref(`${user.uid}/favorites`).push(latestSearch)
+
+    database.ref(`${user.uid}/favorites`).on("child_added", (child) => {
+        console.log(child.val());
+        var buttonsHTML = "<button class='btn' id=" + child.val() + ">" + child.val() + "</button>"
+        $("#button-div").append(buttonsHTML);
+    })
 
 })
 
 // update firebase database automatically
 
-database.ref(`${user.uid}/favorites`).on("child_added", (child) => {
-    console.log(child.val());
-    var buttonsHTML = "<button class='btn' id=" + child.val() + ">" + child.val() + "</button>"
-    $("#button-div").append(buttonsHTML);
-})
 
-
-  
 
 
 
