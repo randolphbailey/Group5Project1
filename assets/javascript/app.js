@@ -120,7 +120,7 @@ function renderTweets(pl, ci){
   $('#container2').tweetie({
     "url": "https://cors-anywhere.herokuapp.com/" + "https://files.sonnyt.com/tweetie/v3/",
     "type": "search",
-    "template": "{{tweet.text}}<br>",
+    "template": "{{tweet.text}}",
     "dateFormat": "%b %d, %Y",
     "params": {
       "count": 15,
@@ -128,5 +128,7 @@ function renderTweets(pl, ci){
     }
   });
 };
+// actualURL: https://twitter.com/MSUMDining/status/1095348050082422785
 
+// https://twitter.com/i/web/status/1095348050082422785
 //   end twitterr code
