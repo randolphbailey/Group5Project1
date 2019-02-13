@@ -31,7 +31,7 @@ var config = {
         database.ref(user.uid).set({
             name: user.displayName,
             email: user.email,
-            favorites: favoritesArray
+            favorites: "Add a Favorite Location!"
         })
 
       }).catch(function(error) {
@@ -61,13 +61,19 @@ var config = {
     var user = firebase.auth().currentUser;
     console.log(user.uid);
     //logging it onto the database
-    database.ref(user.uid/favorites).push({
-        favorites: latestSearch
+    database.ref(`${user.uid}/favorites`).push(latestSearch)
+
+    database.ref(`${user.uid}/favorites`).on("child_added", (child) => {
+        console.log(child.val());
+        var buttonsHTML = "<button class='btn' id=" + child.val() + ">" + child.val() + "</button>"
+        $("#button-div").append(buttonsHTML);
     })
+
 })
 
+// update firebase database automatically
 
-  
+
 
 
 
