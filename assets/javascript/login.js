@@ -67,9 +67,10 @@ var config = {
 
 // update firebase database automatically
 
-database.ref().on("value", (snapshot) => {
-    console.log(snapshot.favorites.val());
-    var buttonsHTML;
+database.ref(`${user.uid}/favorites`).on("child_added", (child) => {
+    console.log(child.val());
+    var buttonsHTML = "<button class='btn' id=" + child.val() + ">" + child.val() + "</button>"
+    $("#button-div").append(buttonsHTML);
 })
 
 
