@@ -73,9 +73,13 @@ var config = {
 
 })
 
-$("button").on("click", () => {
-    var id = $(this).attr("id");
-    console.log(id);
+$(":button").on("click", () => {
+    if (($(this).val() === "Search" || ($(this).val()) === "Favorites")) {
+        return;
+    } else {
+        var id = $(this).attr("id");
+        console.log(id);
+    }
 })
 
 
