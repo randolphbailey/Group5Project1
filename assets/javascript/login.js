@@ -73,7 +73,11 @@ var config = {
 
 })
 
-// update firebase database automatically
+$("button").on("click", () => {
+    var id = $(this).attr("id");
+    console.log(id);
+})
+
 
 
 
