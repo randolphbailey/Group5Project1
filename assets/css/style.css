@@ -2,48 +2,136 @@ body
 
 {
     background-color: #1c1f28;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 #header {
 
-    width: 70%;
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
 
-#lbtn, #sbtn {     
+#buttons {
+
+    display: block;
+}
+
+#fave-button, #login-button {     
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
     overflow: hidden;        
 }
-h1 {
-    text-align: center;
-    font-size: 30pt;
-    color: #d76035;
+
+#intro {
+
+    padding: 10px;
+    clear: both;
+
 }
 
-p 
+#bird {
+    float: right;
+}
+
+
+h1 {
+    text-align: center;
+}
+p, h1 
 
 {
 
-    color: #e5c187;
+    color: #da923c;
+    font-size: 11pt;
 
 }
 
-#submission, #login {
+#submission {
+
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#mapntweet {
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 10px;
 }
 
 /* REMEMBER: set the map height explicitly to define the size of the div
 * element that contains the map. */
+
 #map {
-    height: 500px;
+    height: 300px;
+    width: 400px;
+
 }
 
 #fd {
-    width: 50%;
+    margin: auto;
+    width: 100%;
+}
+
+#scroll {
+
+margin-left: 10px;
+height:300px;
+width:600px;
+border:5px;
+border-style: dashed;
+border-color:#f04304;
+scrollbar-color: #da923c;
+overflow:auto;
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+    #header {
+
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 45%;
+
+    }
+
+
+    #scroll {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        align: auto;
+        width: 70%;
+       
+      }
+  
+      #map {
+          padding-bottom: 20px;
+          align: auto;
+          margin-left: auto;
+          margin-right: auto;
+          width: 70%;
+        }
+
+      #fd {
+          width: 50%;
+          align: auto;
+      }
+
+      #intro {
+
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+
+        width: 90%;
+      }
+
 }
