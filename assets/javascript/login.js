@@ -62,6 +62,14 @@ var config = {
     console.log(user.uid);
     //logging it onto the database
     database.ref(`${user.uid}/favorites`).push(latestSearch)
+
+})
+
+// update firebase database automatically
+
+database.ref().on("value", (snapshot) => {
+    console.log(snapshot.favorites.val());
+    var buttonsHTML;
 })
 
 
