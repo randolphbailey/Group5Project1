@@ -18,7 +18,6 @@ var config = {
 
   // Initialize Providers
   var google = new firebase.auth.GoogleAuthProvider();
-  var github = new firebase.auth.GithubAuthProvider();
 
 
   $("#google-button").on("click",() => {
@@ -62,19 +61,12 @@ var config = {
     var user = firebase.auth().currentUser;
     console.log(user.uid);
     //logging it onto the database
-    database.ref(user.uid).push({
-        favorites: favoritesArray
+    database.ref(user.uid/favorites).push({
+        favorites: latestSearch
     })
 })
 
-  
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-   
-    } else {
-      // No user is signed in.
-    }
-  });
+
   
 
 
