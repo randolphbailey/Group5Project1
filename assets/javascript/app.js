@@ -66,7 +66,15 @@ function initMap() {
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
-      renderTweets(place.name, place.address_components[3].long_name);
+      // calling the renderTweets function on our places
+      // checks if the city name is given
+      if (place.address_components){
+        renderTweets(place.name, place.address_components[3].long_name);
+
+      // if not we will just call our function with the name and type of establishment
+      } else {
+        renderTweets(place.name, place.types[0]);
+      }
 
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
@@ -108,11 +116,14 @@ END GOOGLE MAPS CODE
 // this will be called when the user searched a place (either pressing enter or clicking submit)
 // i want to only pass into it the name of the city and the name of the business/type of business
 // any more specific than that and we tend to not have many tweets that match
+
+var testTemplate = "<div class='col-4 mb-3'><div class='card'><div class='card-body'><h5 class='card-title'>{{tweet.user.screen_name}}</h5><p class='card-text'>{{tweet.text}}</p></div><div class='card-footer'><a href='https://twitter.com/Twitter/status/{{tweet.id_str}}' target='_blank'>Permalink</a></div></div></div>";
+
 function renderTweets(pl, ci){
   $('#container2').tweetie({
     "url": "https://cors-anywhere.herokuapp.com/" + "https://files.sonnyt.com/tweetie/v3/",
     "type": "search",
-    "template": "{{tweet.text}}<br>",
+    "template": testTemplate,
     "dateFormat": "%b %d, %Y",
     "params": {
       "count": 15,
