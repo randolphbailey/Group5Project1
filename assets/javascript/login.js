@@ -61,9 +61,7 @@ var config = {
     var user = firebase.auth().currentUser;
     console.log(user.uid);
     //logging it onto the database
-    database.ref(`${user.uid}/favorites`).push({
-        favorites: latestSearch
-    })
+    database.ref(`${user.uid}/favorites`).push(latestSearch)
 })
 
 
