@@ -52,7 +52,7 @@ var config = {
 
   $("#submit").on("click", (event) => {
     event.preventDefault();
-    var value = $("#fd").val().trim();
+    var value = $("#fd").val();
     searchArray.push(value);
   })
 
