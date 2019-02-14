@@ -71,6 +71,7 @@ var config = {
 })
 
 function populate (val) {
+    console.log(val.attr("id"));
     for(var i = 0; i < favorites.length; i++) {
         if (val.attr("id") === i){
             console.log(favorites[i]);
@@ -78,7 +79,7 @@ function populate (val) {
     }
 }
 
-console.log("test34");
+console.log("test35");
 
 
 
