@@ -56,15 +56,15 @@ var config = {
     var user = firebase.auth().currentUser;
     console.log(user.uid);
     //logging it onto the database
-    database.ref(`${user.uid}/favorites`).push(latestSearch)
+    database.ref(`${user.uid}/favorites`).push(latestSearch);
 
-    var buttonsHTML = "<input type='button' class='dynamic'>" + latestSearch + "</button>"
+    var buttonsHTML = "<button class='dynamic'>" + latestSearch + "</button>"
     $("#buttons").append(buttonsHTML);
   
-    $(".dynamic").on("click", (e) => {
+    $(document).on("click", ".dynamic", (e) => {
         e.preventDefault();
         console.log("clicked");
-        var buttonValue = $(this).val()
+        var buttonValue = $(".dynamic").val();
         console.log(buttonValue);
         $("#fd").val(buttonValue);
     })
@@ -75,7 +75,7 @@ var config = {
 
 
 
-console.log("test14");
+console.log("test15");
 
 
 
