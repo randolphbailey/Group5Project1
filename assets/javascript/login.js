@@ -65,8 +65,8 @@ var config = {
 
 
 $(":button").on("click", ".dynamic", () => {
-    var value = $(this).val();
-    $("#fd").val(value);
+    var buttonValue = $(this).val();
+    $("#fd").attr("value", buttonValue);
 })
 
 
