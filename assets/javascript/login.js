@@ -66,10 +66,11 @@ var config = {
 
 function populate (val) {
     console.log(latestSearch);
-        $("#fd").val(latestSearch);
+    console.log(val.val());
+        $("#fd").val(val.val());
 }
 
-console.log("test21");
+console.log("test22");
 
 
 
