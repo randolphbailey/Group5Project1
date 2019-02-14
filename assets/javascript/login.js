@@ -57,23 +57,25 @@ var config = {
     //logging it onto the database
     database.ref(`${user.uid}/favorites`).push(latestSearch)
 
-    var buttonsHTML = "<button class='dynamic' id = " + latestSearch + ">" + latestSearch + "</button>"
+    var buttonsHTML = "<input type='button' class='dynamic' value = " + latestSearch + ">" + latestSearch + "</button>"
     $("#buttons").append(buttonsHTML);
   
+    $(document).on("click", ".dynamic", (e) => {
+        e.preventDefault();
+        console.log("clicked");
+        if()
+        var buttonValue = $(".dynamic").text(latestSearch);
+        console.log(buttonValue);
+        $("#fd").val(buttonValue);
+    })
 
 })
 
 
-$(document).on("click", ".dynamic", (e) => {
-    e.preventDefault();
-    console.log("clicked");
-    var buttonValue = $(".dynamic").text();
-    console.log(buttonValue);
-    $("#fd").val(buttonValue);
-})
 
 
-console.log("test11");
+
+console.log("test12");
 
 
 
