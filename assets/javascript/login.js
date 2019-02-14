@@ -61,7 +61,7 @@ var config = {
     //logging it onto the database
     database.ref(`${user.uid}/favorites`).push(latestSearch);
     for (var i = 0; i < favorites.length; i++) {
-        if(favorite[favorites.length-1]) {
+        if(favorites[favorites.length-1]) {
             var buttonsHTML = "<button class='dynamic' id = '" + i + "'onclick='populate($(this))'>" + latestSearch + "</button>"
             $("#buttons").append(buttonsHTML);
         }
