@@ -63,12 +63,13 @@ var config = {
     $("#buttons").append(buttonsHTML);
   
     $(".dynamic").on("click", function () {
+        console.log("clicked");
         $("fd").val("clicked");
     })
 })
 
 
-console.log("test25");
+console.log("test26");
 
 
 
