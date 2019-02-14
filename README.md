@@ -12,10 +12,15 @@ Firebase was used for 2 main purposes in this project.
 
 The first main use was to grab user authentication via Google sign-in, allowing us to store individualized data depending on the user.
 
+When a user logs in via google OAuth, user then is stored as a unique uid. *(Line 21 - 50)
+
+This uid is then stored in Firebases' Realtime Database, allowing the data to be kept seperate and dynamic. *(Line 54 - 80)
+
 When a user logs in via google OAuth, user then is stored as a unique uid. 
 *(Line 21 - 50)
 
 This uid is then stored in Firebases' Realtime Database, allowing the data to be kept seperate and dynamic.
 *(Line 54 - 80)
+
 
 Through this, a user can log in and add a favorite location as a button. When clicking this button, it auto-populates the search bar with the direct address, saving time and effort of needing to remember the exact address.
