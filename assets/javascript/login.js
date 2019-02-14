@@ -65,12 +65,12 @@ var config = {
 })
 
 function populate (val) {
-    $(document).on("click", ".dynamic", function () {
-        alert($(".dynamic").val());
+    $(button).on("click", ".dynamic", function () {
+        alert($(this).val());
     })
 }
 
-console.log("test23");
+console.log("test24");
 
 
 
