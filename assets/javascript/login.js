@@ -62,14 +62,13 @@ var config = {
     var buttonsHTML = "<button class='dynamic'>" + latestSearch + "</button>"
     $("#buttons").append(buttonsHTML);
   
-    $(".dynamic").on("click", function () {
-        console.log("clicked");
+    $(document).on("click",".dynamic", function () {
         $("fd").val("clicked");
     })
 })
 
 
-console.log("test26");
+console.log("test27");
 
 
 
