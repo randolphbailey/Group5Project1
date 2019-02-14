@@ -57,8 +57,8 @@ var config = {
     //logging it onto the database
     database.ref(`${user.uid}/favorites`).push(latestSearch)
 
-    var buttonsHTML = "<button class='dynamic'>" + latestSearch + "</button>"
-    $("#buttons").append(buttonsHTML);
+    var buttonsHTML = "<button class='dynamic' id ='favbutton'>" + latestSearch + "</button>"
+    $("#buttons-2").append(buttonsHTML);
   
 
 })
