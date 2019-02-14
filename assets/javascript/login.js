@@ -61,10 +61,9 @@ var config = {
     var buttonsHTML = "<input type='button' class='dynamic'>" + latestSearch + "</button>"
     $("#buttons").append(buttonsHTML);
   
-    $(document).on("click", ".dynamic", (e) => {
+    $(".dynamic").on("click", (e) => {
         e.preventDefault();
         console.log("clicked");
-        console.log(this);
         var buttonValue = $(this).val()
         console.log(buttonValue);
         $("#fd").val(buttonValue);
@@ -76,7 +75,7 @@ var config = {
 
 
 
-console.log("test13");
+console.log("test14");
 
 
 
