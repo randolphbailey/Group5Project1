@@ -64,7 +64,7 @@ var config = {
 })
 
 
-$(":button").on("click", ".dynamic", () => {
+$(document).on("click", ".dynamic", () => {
     console.log("clicked");
     var buttonValue = $(this).val();
     console.log(buttonValue);
@@ -72,7 +72,7 @@ $(":button").on("click", ".dynamic", () => {
 })
 
 
-console.log(test4);
+console.log("test5");
 
 
 
