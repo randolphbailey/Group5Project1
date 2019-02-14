@@ -66,11 +66,11 @@ var config = {
 
 function populate (val) {
     $(document).on("click", ".dynamic", function () {
-        alert($(this).val());
+        alert($(".dynamic").val());
     })
 }
 
-console.log("test22");
+console.log("test23");
 
 
 
