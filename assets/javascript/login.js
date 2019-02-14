@@ -49,7 +49,7 @@ var config = {
   })
 
 
-  $("#favorite").on("click", (event) => {
+  $("#fave-button").on("click", (event) => {
     event.preventDefault();
     var latestSearch = $("#fd").val();
     var user = firebase.auth().currentUser;
