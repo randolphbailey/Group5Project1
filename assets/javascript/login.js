@@ -63,7 +63,7 @@ var config = {
     for (var i = 0; i < favorites.length; i++) {
         if(favorites[favorites.length-1]) {
             var buttonsHTML = "<button class='dynamic' id = '" + (favorites.length-1) + "'onclick='populate($(this))'>" + latestSearch + "</button>"
-            $("#buttons").append(buttonsHTML);
+            $("#buttons-2").append(buttonsHTML);
             return;
         }
     }
