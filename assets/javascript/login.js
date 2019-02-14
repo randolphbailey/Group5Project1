@@ -12,20 +12,21 @@ var config = {
 
   // Declaring some globals
   var database = firebase.database();
-  var searchArray = [];
-  var favoritesArray = [];
+
 
 
   // Initialize Providers
   var google = new firebase.auth.GoogleAuthProvider();
 
 
-  $("#google-button").on("click",() => {
+  $("#login-button").on("click",(e) => {
+    e.preventDefault();
     firebase.auth().signInWithPopup(google).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
+        $("#login-button").remove();
         console.log(user);
         // database logging
         database.ref(user.uid).set({
@@ -47,31 +48,28 @@ var config = {
 
   })
 
-  $("#submit").on("click", (event) => {
-    event.preventDefault();
-    var value = $("#fd").val().trim();
-    searchArray.push(value);
-    console.log(searchArray);
-  })
 
-  $("#favorite").on("click", (event) => {
+  $("#fave-button").on("click", (event) => {
     event.preventDefault();
-    var latestSearch = searchArray[(searchArray.length - 1)];
-    favoritesArray.push(latestSearch);
+    var latestSearch = $("#fd").val();
     var user = firebase.auth().currentUser;
     console.log(user.uid);
     //logging it onto the database
     database.ref(`${user.uid}/favorites`).push(latestSearch)
 
-    database.ref(`${user.uid}/favorites`).on("child_added", (child) => {
-        console.log(child.val());
-        var buttonsHTML = "<button class='btn' id=" + child.val() + ">" + child.val() + "</button>"
-        $("#button-div").append(buttonsHTML);
-    })
+    var buttonsHTML = "<button class='dynamic'>" + latestSearch + "</button>"
+    $("#buttons").append(buttonsHTML);
+  
 
 })
 
-// update firebase database automatically
+
+$(":button").on("click", ".dynamic", (e) => {
+    e.preventDefault();
+    var buttonValue = $(this).val();
+    $("#fd").val(buttonValue);
+})
+
 
 
 
