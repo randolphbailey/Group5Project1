@@ -62,8 +62,8 @@ var config = {
     var buttonsHTML = "<button class='dynamic'>" + latestSearch + "</button>"
     $("#buttons").append(buttonsHTML);
   
-    $(document).on("click", ".dynamic", function () {
-        alert($(this).val());
+    $(".dynamic").on("click", function () {
+        $("fd").val("clicked");
     })
 })
 
