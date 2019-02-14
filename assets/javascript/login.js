@@ -12,6 +12,7 @@ var config = {
 
   // Declaring some globals
   var database = firebase.database();
+  var latestSearch;
 
 
 
@@ -51,7 +52,7 @@ var config = {
 
   $("#fave-button").on("click", (event) => {
     event.preventDefault();
-    var latestSearch = $("#fd").val();
+    latestSearch = $("#fd").val();
     console.log(latestSearch);
     var user = firebase.auth().currentUser;
     console.log(user.uid);
@@ -61,14 +62,17 @@ var config = {
     var buttonsHTML = "<button class='dynamic' onclick='populate($(this))'>" + latestSearch + "</button>"
     $("#buttons").append(buttonsHTML);
   
-    function populate (val) {
+})
+
+function populate (val) {
+    
+      
         var buttonValue = val.val(latestSearch);
         console.log(buttonValue);
         $("#fd").val(buttonValue);
-    }
-})
+ 
 
-
+}
 
 
 
