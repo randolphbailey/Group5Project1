@@ -16,17 +16,10 @@ When a user logs in via google OAuth, user then is stored as a unique uid. *(Lin
 
 This uid is then stored in Firebases' Realtime Database, allowing the data to be kept seperate and dynamic. *(Line 54 - 80)
 
-When a user logs in via google OAuth, user then is stored as a unique uid. 
-*(Line 21 - 50)
-
-This uid is then stored in Firebases' Realtime Database, allowing the data to be kept seperate and dynamic.
-*(Line 54 - 80)
-
 
 Through this, a user can log in and add a favorite location as a button. When clicking this button, it auto-populates the search bar with the direct address, saving time and effort of needing to remember the exact address.
 
 ## Google Maps and Associated APIs
-
 Three Google APIs were used for this project.
 
 The first was the main map API.  This simply takes an arbitrary, empty div tag and generates a new Google map inside of it.  Various options such as the height and width of the map can be changed through the CSS of the div tag.
