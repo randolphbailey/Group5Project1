@@ -58,24 +58,24 @@ var config = {
     //logging it onto the database
     database.ref(`${user.uid}/favorites`).push(latestSearch);
 
-    var buttonsHTML = "<button class='dynamic'>" + latestSearch + "</button>"
+    var buttonsHTML = "<button class='dynamic' onclick='populate(this)'>" + latestSearch + "</button>"
     $("#buttons").append(buttonsHTML);
   
-    $(document).on("click", ".dynamic", (e) => {
-        e.preventDefault();
-        console.log("clicked");
-        var buttonValue = $(".dynamic").val();
-        console.log(buttonValue);
-        $("#fd").val(buttonValue);
-    })
-
 })
 
+function populate (val) {
+    
+      
+        var buttonValue = $(val).attr('val');
+        console.log(buttonValue);
+        $("#fd").val(buttonValue);
+ 
+
+}
 
 
 
-
-console.log("test15");
+console.log("test16");
 
 
 
