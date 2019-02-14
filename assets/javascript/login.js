@@ -12,8 +12,7 @@ var config = {
 
   // Declaring some globals
   var database = firebase.database();
-  var searchArray = [];
-  var favoritesArray = [];
+
 
 
   // Initialize Providers
@@ -49,16 +48,10 @@ var config = {
 
   })
 
-  $("#submit").on("click", (event) => {
-    event.preventDefault();
-    var value = $("#fd").val();
-    searchArray.push(value);
-  })
 
   $("#favorite").on("click", (event) => {
     event.preventDefault();
-    var latestSearch = searchArray[(searchArray.length - 1)];
-    favoritesArray.push(latestSearch);
+    var latestSearch = $("#fd").val();
     var user = firebase.auth().currentUser;
     console.log(user.uid);
     //logging it onto the database
