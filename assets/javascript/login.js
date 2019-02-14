@@ -61,17 +61,14 @@ var config = {
     var buttonsHTML = "<button class='dynamic' onclick='populate($(this))'>" + latestSearch + "</button>"
     $("#buttons").append(buttonsHTML);
   
-})
-
-function populate (val) {
-    
-      
+    function populate (val) {
         var buttonValue = val.val(latestSearch);
         console.log(buttonValue);
         $("#fd").val(buttonValue);
- 
+    }
+})
 
-}
+
 
 
 
