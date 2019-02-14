@@ -66,13 +66,13 @@ var config = {
 
 $(document).on("click", ".dynamic", () => {
     console.log("clicked");
-    var buttonValue = $(this).attr("id");
+    var buttonValue = $(this).attr("value");
     console.log(buttonValue);
     $("#fd").val(buttonValue);
 })
 
 
-console.log("test6");
+console.log("test7");
 
 
 
