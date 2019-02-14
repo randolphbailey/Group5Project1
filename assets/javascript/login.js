@@ -65,13 +65,14 @@ var config = {
 
 
 $(":button").on("click", ".dynamic", () => {
+    console.log("clicked");
     var buttonValue = $(this).val();
     console.log(buttonValue);
     $("#fd").val(buttonValue);
 })
 
 
-
+console.log(test4);
 
 
 
