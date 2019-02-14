@@ -26,7 +26,9 @@ body
 
 #intro {
 
-    padding: 10px;
+    
+    padding-right: 14px;
+    padding-top: 14px;
     clear: both;
 
 }
@@ -37,14 +39,17 @@ body
 
 
 h1 {
+    font-weight: bold;
     text-align: center;
+    font-size: 16pt;
+    color: #2b73c2;
 }
-p, h1 
+p  
 
 {
 
     color: #da923c;
-    font-size: 11pt;
+    font-size: 15.5pt;
 
 }
 
@@ -68,7 +73,7 @@ p, h1
 * element that contains the map. */
 
 #map {
-    height: 300px;
+    height: 500px;
     width: 400px;
 
 }
@@ -81,7 +86,7 @@ p, h1
 #scroll {
 
 margin-left: 10px;
-height:300px;
+height:500px;
 width:600px;
 border:5px;
 border-style: dashed;
@@ -89,6 +94,12 @@ border-color:#f04304;
 scrollbar-color: #da923c;
 overflow:auto;
 
+}
+
+#tweets {
+
+    padding-left: 30px;
+ 
 }
 
 @media only screen and (max-width: 1200px) {
@@ -107,14 +118,14 @@ overflow:auto;
         margin-top: 20px;
         margin-left: auto;
         margin-right: auto;
-        align: auto;
+        margin: auto;
         width: 70%;
        
       }
   
       #map {
           padding-bottom: 20px;
-          align: auto;
+          margin: auto;
           margin-left: auto;
           margin-right: auto;
           width: 70%;
@@ -122,7 +133,7 @@ overflow:auto;
 
       #fd {
           width: 50%;
-          align: auto;
+          margin: auto;
       }
 
       #intro {
