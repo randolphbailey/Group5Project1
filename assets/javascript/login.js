@@ -65,7 +65,7 @@ var config = {
 })
 
 function populate (val) {
-    $("button").on("click", ".dynamic", function () {
+    $(document).on("click", "button", function () {
         alert($(this).val());
     })
 }
