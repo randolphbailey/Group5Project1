@@ -59,13 +59,13 @@ var config = {
 
     database.ref(`${user.uid}/favorites`).on("child_added", (child) => {
         console.log(child.val());
-        var buttonsHTML = "<button class='btn' id=" + child.val() + ">" + child.val() + "</button>"
+        var buttonsHTML = "<button class='dynamic' id=" + child.val() + ">" + child.val() + "</button>"
         $("#buttons").append(buttonsHTML);
     })
 
 })
 
-$(":button").on("click", () => {
+$(":button").on("click", ".dynamic", () => {
     var value = $(this).val();
     console.log(value);
 })
