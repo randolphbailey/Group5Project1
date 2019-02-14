@@ -67,13 +67,13 @@ var config = {
 $(document).on("click", ".dynamic", (e) => {
     e.preventDefault();
     console.log("clicked");
-    var buttonValue = $(".dynamic").val();
+    var buttonValue = $(".dynamic").text();
     console.log(buttonValue);
     $("#fd").val(buttonValue);
 })
 
 
-console.log("test10");
+console.log("test11");
 
 
 
