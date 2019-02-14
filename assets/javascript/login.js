@@ -64,7 +64,8 @@ var config = {
 })
 
 
-$(":button").on("click", ".dynamic", () => {
+$(":button").on("click", ".dynamic", (e) => {
+    e.preventDefault();
     var buttonValue = $(this).val();
     $("#fd").attr("value", buttonValue);
 })
