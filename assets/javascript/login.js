@@ -66,15 +66,13 @@ var config = {
 
 function populate (val) {
     
-      
+        
         var buttonValue = val.val(latestSearch);
         console.log(buttonValue);
         $("#fd").val(buttonValue);
  
 
 }
-
-
 
 console.log("test18");
 
