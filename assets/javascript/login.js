@@ -52,6 +52,7 @@ var config = {
   $("#fave-button").on("click", (event) => {
     event.preventDefault();
     var latestSearch = $("#fd").val();
+    console.log(latestSearch);
     var user = firebase.auth().currentUser;
     console.log(user.uid);
     //logging it onto the database
@@ -63,7 +64,7 @@ var config = {
     $(document).on("click", ".dynamic", (e) => {
         e.preventDefault();
         console.log("clicked");
-        var buttonValue = $(".dynamic").text(latestSearch);
+        var buttonValue = $(this).val()
         console.log(buttonValue);
         $("#fd").val(buttonValue);
     })
@@ -74,7 +75,7 @@ var config = {
 
 
 
-console.log("test12");
+console.log("test13");
 
 
 
