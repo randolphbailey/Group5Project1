@@ -14,20 +14,20 @@ var map;
 var service;
 var infowindow;
 
-// function createMarker(place) {
-//   console.log("place: ");
-//   console.log(place);
+function createMarker(place) {
+  console.log("place: ");
+  console.log(place);
 
-//   var marker = new google.maps.Marker({
-//     map: map,
-//     position: place.geometry.location
-//   });
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
 
-//   google.maps.event.addListener(marker, 'click', function() {
-//     infowindow.setContent(place.name);
-//     infowindow.open(map, this);
-//   });
-// }
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
 
 //Main function that Google API will look for and run on page load
 //Most code related to the map should go inside this function
@@ -42,6 +42,7 @@ function initMap() {
   var input = document.getElementById('fd');
   var searchBox = new google.maps.places.SearchBox(input);
 
+
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
     searchBox.setBounds(map.getBounds());
@@ -51,17 +52,10 @@ function initMap() {
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
   searchBox.addListener('places_changed', function() {
+
     var places = searchBox.getPlaces();
 
-    // calling the renderTweets function on our places
-    // checks if the city name is given
-    if (places[0].address_components){
-      renderTweets(places[0].name, places[0].address_components[3].long_name);
-
-    // if not we will just call our function with the name and type of establishment
-    } else {
-      renderTweets(places[0].name, places[0].types[0]);
-    }
+    geocodeLatLng(places[0].place_id, places[0].name, geocoder);
 
     if (places.length == 0) {
       return;
@@ -76,6 +70,7 @@ function initMap() {
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
+      // console.log(place);
 
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
@@ -104,9 +99,33 @@ function initMap() {
         bounds.extend(place.geometry.location);
       }
     });
+
     map.fitBounds(bounds);
   });
+
+   // create geocoder object
+   var geocoder = new google.maps.Geocoder;
+
 }
+
+   // geocoding function that takes in placeID
+   function geocodeLatLng(ourPlaceID, ourPlaceName, geocoder){
+
+    geocoder.geocode({"placeId": ourPlaceID}, function(results, status) {
+      // getting the city name if it is available
+      // calling render tweets function on either place name and city name
+      // or just place name if city name is undefined
+      if (results[0].address_components[3] != undefined){
+        var searchCity = results[0].address_components[3].long_name;
+        var searchTerm = ourPlaceName+" "+searchCity;
+        renderTweets(searchTerm);
+      } else {
+        renderTweets(ourPlaceName);
+      }          
+    });
+
+  }
+
 
 /*
 END GOOGLE MAPS CODE
@@ -116,19 +135,22 @@ END GOOGLE MAPS CODE
 
 // this will be called when the user searched a place (either pressing enter or clicking submit)
 // i want to only pass into it the name of the city and the name of the business/type of business
-// any more specific than that and we tend to not have many tweets that match
-var testTemplate = "<div class='col-4 mb-3'><div class='card'><div class='card-body'><h5 class='card-title'>{{tweet.user.screen_name}}</h5><p class='card-text'>{{tweet.text}}</p></div><div class='card-footer'><a href='https://twitter.com/Twitter/status/{{tweet.id_str}}' target='_blank'>Permalink</a></div></div></div>";
+// any more specific than that and we tend to not have many tweets
+var testTemplate = '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">{{tweet.text}}</p>&mdash; {{tweet.user.name}} ({{tweet.user.screen_name}}) <a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}?ref_src=twsrc%5Etfw">{{tweet.created_at}}</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
 
-function renderTweets(pl, ci){
-  $('#container2').tweetie({
+function renderTweets(s){
+  console.log('called');
+  $('#tweets').tweetie({
     "url": "https://cors-anywhere.herokuapp.com/" + "https://files.sonnyt.com/tweetie/v3/",
     "type": "search",
     "template": testTemplate,
     "dateFormat": "%b %d, %Y",
     "params": {
       "count": 15,
-      "q": pl+" "+ci
+      "q": s
     }
+  }, function() {
+    console.log("Finished");
   });
 };
 //   end twitterr code

@@ -11,12 +11,17 @@
 </head>
 
 <body>
-<div class="container">
-    <div class="row">
+
+<div class="container" id="main">
+
+<!--header-->
+
+    <div class="row" id= "head">
         <div class="col">
             <img src= "assets/images/project1logo.png" id = "header">
         </div>
     </div>
+<<<<<<< HEAD
     <div class="row mt-2" id="login">
         <div class="col">
             <p id ='letslogin'>Let's Login! (Optional)</p>
@@ -25,25 +30,70 @@
         </div>
     </div>
     <div class="row mt-2" id="submission">
+=======
+
+ 
+<div id="main-container" class="mcontainer">
+
+<!--search bar and buttons-->
+
+<div class="row mt-2" id="submission">
+
+>>>>>>> bed4e9671ab6b4f21c15c7550520c40b377214fb
         <div class="col">
-            <p>Let's start simple: Where are you?</p>
-            <p><input type="text" name="address" id="fd" class="m-2"></p>
-            <div id="button-div"></div>
-            <p><input type="button" id="submit" value="Submit" class="btn btn-success m-2"></p>
-            <p><input type="button" value="Favorite" id='favorite'></p>
+
+            <p><input type="text" name="address" placeholder= "Enter a location" id="fd"></p>
+
+            <div class="input-group-append" id="buttons">
+
+                <button type="submit" class="btn btn-primary m-2" id="login-button"><img src = "assets/images/loginbutton.png"></button>
+                <button type="submit" class="btn btn-primary m-2" id="fave-button"><img src = "assets/images/favebutton.png"></button>
+
+
+              </div>
+ 
         </div>
 
     </div>
-    <div class="row mt-2" id="main-content">
-        <div id="container1" class="col">
-            <!--Map will be initialized here-->
-            <div id="map"></div>
-        </div>
+                
+            
+<!--map and tweets-->
+
+
+    <div class= "row mt-2" id="mapntweet">
+
+            
+        <div class="maphere" id="map"></div>
+
+            <div class="scroll" id= "scroll">
+                               
+                    <div class="tweetshere" id="tweets">
+                            
+                        <section class="main-section" id="intro">
+                            
+                                        <h1>So long, Yelp.</h1>
+                                  
+                                        <img src="assets/images/bird.png" id ="bird">
+                                  
+                                        <p>We know you. You’re no relic- you’re modern, you know all the slang- well, maybe you don’t know ALL the slang, but you DO know that the best feedback isn’t found in stuffy old resturant reviews. It comes straight from the horse’s beak.
+
+                                        <p>OTPYG is an app dedicated to finding you the real news- just type in a location, and find Tweets from people in the area. The real stuff- impromptu events, uncensored customers, funny 
+                                        stories. Use Google to login and we can save favorite locations for you. But we know you. You don’t need us to tell you the smart choice. So what are you waiting for?</p>
+                                  
+                        </section>
+
+                  </div>
+                
+            </div>
+     
     </div>
-    <div class="row mt-2" id="container2">
-    </div>
-    </div>
+
+<!--final div-->
+
 </div>
+
+</div>
+
 
 
 
@@ -53,7 +103,7 @@
 <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="assets/tweetie/dist/tweetie.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUiKebXiIyUY15hkYOJC770BTXJpJBtUw&callback=initMap&libraries=places" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQNp3HoptPePZ74RNj9eEgug2kEqBbY-s&callback=initMap&libraries=places" async defer></script>
 <script src="assets/javascript/login.js"></script>
 <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
