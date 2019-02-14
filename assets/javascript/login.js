@@ -13,6 +13,7 @@ var config = {
   // Declaring some globals
   var database = firebase.database();
   var latestSearch;
+  var favorites = [];
 
 
 
@@ -53,22 +54,28 @@ var config = {
   $("#fave-button").on("click", (event) => {
     event.preventDefault();
     latestSearch = $("#fd").val();
+    favorites.push(latestSearch);
     console.log(latestSearch);
     var user = firebase.auth().currentUser;
     console.log(user.uid);
     //logging it onto the database
     database.ref(`${user.uid}/favorites`).push(latestSearch);
-
-    var buttonsHTML = "<button class='dynamic'>" + latestSearch + "</button>"
-    $("#buttons").append(buttonsHTML);
+    for (var i = 0; i < favorites.length; i++) {
+        var buttonsHTML = "<button class='dynamic' id = '" + i + "'onclick='populate($(this))'>" + latestSearch + "</button>"
+        $("#buttons").append(buttonsHTML);
+    }
   
-    $(document).on("click",".dynamic", function () {
-        $("fd").val("clicked");
-    })
 })
 
+function populate (val) {
+    for(var i = 0; i < favorites.length; i++) {
+        if (favorites[i] === ($(".dynamic").attr("id"))) {
+            console.log("correct");
+        }
+    }
+}
 
-console.log("test27");
+console.log("test30");
 
 
 
