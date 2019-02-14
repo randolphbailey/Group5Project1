@@ -63,7 +63,6 @@ var config = {
     $(document).on("click", ".dynamic", (e) => {
         e.preventDefault();
         console.log("clicked");
-        if()
         var buttonValue = $(".dynamic").text(latestSearch);
         console.log(buttonValue);
         $("#fd").val(buttonValue);
