@@ -65,9 +65,9 @@ var config = {
 })
 
 function populate (val) {
-    console.log(latestSearch);
-    console.log(val.val());
-        $("#fd").val(val.val());
+    $(document).on("click", ".dynamic", function () {
+        alert($(this).val());
+    })
 }
 
 console.log("test22");
