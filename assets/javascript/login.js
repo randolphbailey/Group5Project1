@@ -62,8 +62,9 @@ var config = {
     database.ref(`${user.uid}/favorites`).push(latestSearch);
     for (var i = 0; i < favorites.length; i++) {
         if(favorites[favorites.length-1]) {
-            var buttonsHTML = "<button class='dynamic' id = '" + i + "'onclick='populate($(this))'>" + latestSearch + "</button>"
+            var buttonsHTML = "<button class='dynamic' id = '" + (favorites.length-1) + "'onclick='populate($(this))'>" + latestSearch + "</button>"
             $("#buttons").append(buttonsHTML);
+            return;
         }
     }
   
@@ -71,13 +72,13 @@ var config = {
 
 function populate (val) {
     for(var i = 0; i < favorites.length; i++) {
-        if (val.attr("id") === favorites[i]){
-            console.log("correct");
+        if (val.attr("id") === i){
+            console.log(favorites[i]);
         }
     }
 }
 
-console.log("test32");
+console.log("test34");
 
 
 
