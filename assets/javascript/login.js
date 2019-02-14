@@ -64,7 +64,8 @@ var config = {
 })
 
 
-$(document).on("click", ".dynamic", () => {
+$(document).on("click", ".dynamic", (e) => {
+    e.preventDefault();
     console.log("clicked");
     var buttonValue = $(".dynamic").val();
     console.log(buttonValue);
@@ -72,7 +73,7 @@ $(document).on("click", ".dynamic", () => {
 })
 
 
-console.log("test9");
+console.log("test10");
 
 
 
