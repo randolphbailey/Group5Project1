@@ -57,12 +57,12 @@ var config = {
     //logging it onto the database
     database.ref(`${user.uid}/favorites`).push(latestSearch)
 
-    database.ref(`${user.uid}/favorites`).on("child_added", (child) => {
-        console.log(child.val());
-        var buttonsHTML = "<button class='dynamic' id=" + child.val() + ">" + child.val() + "</button>"
-        $("#buttons").append(buttonsHTML);
-    })
+})
 
+database.ref(`${user.uid}/favorites`).on("child_added", (child) => {
+    console.log(child.val());
+    var buttonsHTML = "<button class='dynamic' id=" + child.val() + ">" + child.val() + "</button>"
+    $("#buttons").append(buttonsHTML);
 })
 
 $(":button").on("click", ".dynamic", () => {
