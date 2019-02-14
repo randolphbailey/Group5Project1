@@ -61,21 +61,23 @@ var config = {
     //logging it onto the database
     database.ref(`${user.uid}/favorites`).push(latestSearch);
     for (var i = 0; i < favorites.length; i++) {
-        var buttonsHTML = "<button class='dynamic' id = '" + i + "'onclick='populate($(this))'>" + latestSearch + "</button>"
-        $("#buttons").append(buttonsHTML);
+        if(favorite[favorites.length-1]) {
+            var buttonsHTML = "<button class='dynamic' id = '" + i + "'onclick='populate($(this))'>" + latestSearch + "</button>"
+            $("#buttons").append(buttonsHTML);
+        }
     }
   
 })
 
 function populate (val) {
     for(var i = 0; i < favorites.length; i++) {
-        if (favorites[i] === ($(".dynamic").attr("id"))) {
+        if (favorites[(val.attr("id"))]){
             console.log("correct");
         }
     }
 }
 
-console.log("test30");
+console.log("test31");
 
 
 
