@@ -67,14 +67,14 @@ var config = {
 function populate (val) {
     
 
-        var buttonValue = val.val(latestSearch);
+        var buttonValue = val.text(latestSearch);
         console.log(buttonValue);
         $("#fd").val(buttonValue);
  
 
 }
 
-console.log("test18");
+console.log("test19");
 
 
 
