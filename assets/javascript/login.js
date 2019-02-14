@@ -71,13 +71,13 @@ var config = {
 
 function populate (val) {
     for(var i = 0; i < favorites.length; i++) {
-        if (favorites[(val.attr("id"))]){
+        if (val.attr("id") === favorites[i]){
             console.log("correct");
         }
     }
 }
 
-console.log("test31");
+console.log("test32");
 
 
 
