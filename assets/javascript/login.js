@@ -74,12 +74,12 @@ function populate (val) {
     for(var i = 0; i < favorites.length; i++) {
         if (val.attr("id") == i){
             console.log(favorites[i]);
-            $("fd").val(favorites[i]);
+            $("#fd").val(favorites[i]);
         }
     }
 }
 
-console.log("test36");
+console.log("test37");
 
 
 
