@@ -5,7 +5,7 @@ User can do a text search (street address, business name) or drop a pin on the m
 ***
 ## APIs
 *[Twitter Search](https://developer.twitter.com/en/docs/tweets/search/overview/standard.html)
-*[Google Maps] (https://developers.google.com/maps/documentation/)
+*[Google Maps](https://developers.google.com/maps/documentation/)
 
 ## Firebase - Jimin Huh (Database & User Authentication)
 Firebase was used for 2 main purposes in this project.
@@ -29,6 +29,14 @@ The second was the places API.  The primary purpose of this is actually to enabl
 The final API is the geocoding API.  This serves as an add on to the map and places APIs, and returns information needed by the Twitter API for locations or searches that might be ambiguous.  Searching for "Tokyo," for instance, does not yield information that can reliably be searched for.  The geocoding API solves this, and can also find place names based on addresses, instead of name.
 
 A future improvement would be to enable Tweet searching simply by clicking a POI in the map element, and passing the info of that to the Twitter API.  This proved to be significantly more difficult than expected.
+
+## Twitter API (S.Maples)
+
+The Twitter API was used to render tweets related to a user's search query. Twitter's API itself is a fantastic tool that allows you to search with a medley of parameters, then returns tweets as a JSON response object. We were unable to access Twitter's API directly due to the recent updates, so we used a JS Plugin, [tweetie](https://github.com/sonnyt/tweetie).
+
+Tweetie is rather limiting in it's search parameters. Specifically, it does not allow a search for tweets in a specific geolocation. We were able to work around this by passing the city name into our query, but ideally we will be able to work directly with Twitter's API in the future to allow a POI search.
+
+We used Twitter's own [formatting](https://publish.twitter.com/?#) site as our template for the tweets that appeat on screen.
 
 ## Front End Development (D Licea)
 
