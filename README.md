@@ -29,3 +29,16 @@ The second was the places API.  The primary purpose of this is actually to enabl
 The final API is the geocoding API.  This serves as an add on to the map and places APIs, and returns information needed by the Twitter API for locations or searches that might be ambiguous.  Searching for "Tokyo," for instance, does not yield information that can reliably be searched for.  The geocoding API solves this, and can also find place names based on addresses, instead of name.
 
 A future improvement would be to enable Tweet searching simply by clicking a POI in the map element, and passing the info of that to the Twitter API.  This proved to be significantly more difficult than expected.
+
+## Front End Development (D Licea)
+
+We wanted our finished product to look not only polished but trendy as an application aimed towards a young, modern audience that is familiar with social media. 
+
+I used reoccuring elements for a cohesive look, such as a color scheme that consisted of only five colors (dark blue, sky blue, orange, dull yellow, and white), square/rectangluar elements, and dashed lines.
+
+One thing we wanted was to fit all of our elements in as little space as possible, in order to reduce scrolling. We ran into a problem with this when we implimented the Twitter API, when we couldn't figure out an organic way to have the tweets show up. Our original idea was to have the tweets wrap around the map and fill the page, but we knew it couldn't work well unless we changed the template. I came up with a solution by creating a new div container that, once the tweets were appended, gained a scroll bar. By doing this we could keep everything in a relatively small area.
+
+Once we implimented the ability to create buttons with favorite locations, I created a new div for these buttons to appear in order to avoid having them run into the original buttons.
+
+I created some simple illustrations for a custom header and buttons. This looked professional, but also served to make the application have charm and appeal.
+
