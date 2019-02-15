@@ -5,7 +5,7 @@ User can do a text search (street address, business name) or drop a pin on the m
 ***
 ## APIs
 *[Twitter Search](https://developer.twitter.com/en/docs/tweets/search/overview/standard.html)
-*[Google Maps] (https://developers.google.com/maps/documentation/)
+*[Google Maps](https://developers.google.com/maps/documentation/)
 
 ## Firebase - Jimin Huh (Database & User Authentication)
 Firebase was used for 2 main purposes in this project.
